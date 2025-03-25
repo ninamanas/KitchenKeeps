@@ -1,0 +1,146 @@
+/* styles.css */
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 0.5rem; 
+  text-decoration: solid;
+  font-weight: 800 !important; 
+  margin-top: 50px;
+  font-size: 50px !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h5 {
+  color: #5a52e0 !important; 
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 20px;
+  opacity: 70% !important;
+  font-family:cursive;
+  font-weight: bold !important;
+}
+
+.input-area {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 100px;
+}
+
+input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  border-radius: 7px;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background: #5a52e0;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 7px !important;
+  border: none;
+}
+
+button:hover {
+  background: #5a52e0;
+  border-radius: 7px;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+.loading {
+  background: #f8f9fa;
+  color: #6c757d;
+}
+
+.error {
+  background: #fff0f0;
+  color: #dc3545;
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.recipe-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.recipe-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-card h3 {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.ingredients {
+  padding: 0 1rem 1rem;
+  flex-grow: 1;
+}
+
+.ingredients h4 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.ingredients ul {
+  padding-left: 1.5rem;
+  color: #555;
+}
+
+.view-recipe {
+  display: block;
+  text-align: center;
+  padding: 0.75rem;
+  background: #6c63ff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.view-recipe:hover {
+  background: #5a52e0;
+}
+
+body {
+  background: linear-gradient(
+    135deg, 
+    #fefbff 20%,  
+    #fcfaff 100% 
+  );
+}
