@@ -49,7 +49,6 @@
 </template>
 
 <script>
-// Your script section remains exactly the same
 export default {
   data() {
     return {
@@ -71,18 +70,20 @@ export default {
       this.recipes = [];
 
       try {
-        const response = await fetch("http://localhost:3000/api/getRecipes", {
+        const response = await fetch("http://localhost:5000/api/getRecipes", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
+          credentials: "include",
           body: JSON.stringify({
             ingredients: this.userInput
           })
         });
 
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
@@ -92,8 +93,8 @@ export default {
           this.error = "No recipes found with these ingredients";
         }
       } catch (err) {
-        console.error("Error fetching recipes:", err);
-        this.error = "Failed to fetch recipes. Please try again.";
+        console.error("API Error:", err);
+        this.error = err.message || "Failed to fetch recipes. Please try again.";
       } finally {
         this.loading = false;
       }
